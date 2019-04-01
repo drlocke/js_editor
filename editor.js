@@ -26,9 +26,11 @@ newPaint = p.View.Paint.extend({
         this.fill(p.x, p.y);
         break;
       case this.tools.line:
-        var backgroundImage = new Image(); 
-	      backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
-        this.drawImage(backgroundImage, 0, 0);
+        var c = document.getElementById("paint-canvas");
+  	var ctx = c.getContext("2d");
+  	var backgroundImage = new Image(); 
+	backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
+  	ctx.drawImage(backgroundImage, 0, 0);
         break;
       default:
         break;
