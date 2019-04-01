@@ -27,7 +27,8 @@ newPaint = p.View.Paint.extend({
       case this.tools.line:
   	var backgroundImage = new Image(); 
 	backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
-  	this.canvas.drawImage(backgroundImage, 0, 0);
+	var ctx = this.canvas.getContext("2d");
+  	ctx.drawImage(backgroundImage, 0, 0);
         break;
       default:
         break;
