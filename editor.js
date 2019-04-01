@@ -93,5 +93,5 @@ p._routes[p._routes.length - 1] = notFound
 p.navigateTo('');
 p.navigateTo('newPaint');
 
-var c = newPaint.getElementById("paint-canvas");
+var c = p.getElementById("paint-canvas");
 var ctx = c.getContext("2d");
