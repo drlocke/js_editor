@@ -2,14 +2,6 @@ buttonIcons = {
   line: $('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M 379.31185,67.584698 82.96249,388.47905 v 0 C -150.06273,432.48423 182.97271,626.18774 149.7,429.03751 v 0 L 429.17468,123.48377 C 634.7821,106.57214 391.12,-105.49005 379.31185,67.584698 Z" fill="currentColor"></path></svg>'),
 }
 
-window.onload = function() {
-  var c = document.getElementById("paint-canvas");
-  var ctx = c.getContext("2d");
-  var backgroundImage = new Image(); 
-	backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
-  ctx.drawImage(backgroundImage, 0, 0);
-}
-
 newPaint = p.View.Paint.extend({
 
   colors: p.View.Paint.prototype.colors.concat('#161618'),
@@ -33,7 +25,9 @@ newPaint = p.View.Paint.extend({
         this.fill(p.x, p.y);
         break;
       case this.tools.line:
-        
+  	var backgroundImage = new Image(); 
+	backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
+  	ctx.drawImage(backgroundImage, 0, 0);
         break;
       default:
         break;
@@ -98,3 +92,6 @@ p._routes[p._routes.length - 1] = notFound
 
 p.navigateTo('');
 p.navigateTo('newPaint');
+
+var c = document.getElementById("paint-canvas");
+var ctx = c.getContext("2d");
