@@ -27,7 +27,7 @@ newPaint = p.View.Paint.extend({
       case this.tools.line:
   	var backgroundImage = new Image(); 
 	backgroundImage.src = 'https://www.w3schools.com/tags/img_the_scream.jpg'; 
-  	ctx.drawImage(backgroundImage, 0, 0);
+  	this.canvas.drawImage(backgroundImage, 0, 0);
         break;
       default:
         break;
@@ -92,6 +92,3 @@ p._routes[p._routes.length - 1] = notFound
 
 p.navigateTo('');
 p.navigateTo('newPaint');
-
-var c = p.getElementById("paint-canvas");
-var ctx = c.getContext("2d");
